@@ -25,12 +25,10 @@ const samples =
     "RAJIUMU",
     "FI-TO"
 ];
-//
 for (let sample of samples)
 {
     console.log (sample, "→", romajiToKana (sample));
 }
-//
 ```
 
 ## License
