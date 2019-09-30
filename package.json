@@ -1,0 +1,23 @@
+{
+  "name": "simple-romaji-kana",
+  "version": "1.0.0",
+  "description": "Simple Romaji to Kana Converter",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonton-pixel/simple-romaji-kana.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tonton-pixel/simple-romaji-kana/issues"
+  },
+  "homepage": "https://github.com/tonton-pixel/simple-romaji-kana",
+  "keywords": [
+    "romaji",
+    "kana",
+    "converter"
+  ],
+  "author": "Michel MARIANI",
+  "license": "MIT"
+}
