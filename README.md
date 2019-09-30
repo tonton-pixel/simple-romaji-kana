@@ -1,4 +1,4 @@
-# Emoji Patterns
+# Simple Romaji to Kana Converter
 
 ## Description
 
@@ -37,4 +37,4 @@ for (let sample of samples)
 
 The MIT License (MIT).
 
-Copyright © 2018-2019 Michel MARIANI.
+Copyright © 2019 Michel MARIANI.
