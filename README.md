@@ -27,7 +27,7 @@ const samples =
 ];
 for (let sample of samples)
 {
-    console.log (sample, "→", romajiToKana (sample));
+    console.log (`${sample} → ${romajiToKana (sample)}`);
 }
 ```
 
