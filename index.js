@@ -5,6 +5,9 @@
 // Nihon-shiki romanization - Wikipedia
 // https://en.wikipedia.org/wiki/Nihon-shiki_romanization
 //
+// Kunrei-shiki romanization - Wikipedia
+// https://en.wikipedia.org/wiki/Kunrei-shiki_romanization
+//
 // Hepburn romanization - Wikipedia
 // https://en.wikipedia.org/wiki/Hepburn_romanization
 //
@@ -173,7 +176,15 @@ const romajiToKanaTable =
     "we": "ゑ",
     "wo": "を",
     //
-    "n'": "ん",
+    "n'a": "んあ",
+    "n'i": "んい",
+    "n'u": "んう",
+    "n'e": "んえ",
+    "n'o": "んお",
+    "n'ya": "んや",
+    "n'yu": "んゆ",
+    "n'yo": "んよ",
+    //
     "n": "ん",
     //
     "kk": [ "っ", -1 ],
@@ -349,10 +360,16 @@ const romajiToKanaTable =
     "WE": "ヱ",
     "WO": "ヲ",
     //
-    "N'": "ン",
-    "N": "ン",
+    "N'A": "ンア",
+    "N'I": "ンイ",
+    "N'U": "ンウ",
+    "N'E": "ンエ",
+    "N'O": "ンオ",
+    "N'YA": "ンヤ",
+    "N'YU": "ンユ",
+    "N'YO": "ンヨ",
     //
-    "-": "ー",
+    "N": "ン",
     //
     "KK": [ "ッ", -1 ],
     "GG": [ "ッ", -1 ],
@@ -365,15 +382,15 @@ const romajiToKanaTable =
     "HH": [ "ッ", -1 ],
     "FF": [ "ッ", -1 ],
     "BB": [ "ッ", -1 ],
-    "PP": [ "ッ", -1 ]
+    "PP": [ "ッ", -1 ],
+    //
+    "-": "ー"
 };
 //
 // Longest strings first
 // let romajiKeys = Object.keys (romajiToKanaTable).sort ((a, b) => b.length - a.length);
 let romajiKeys = Object.keys (romajiToKanaTable).sort ().reverse ();
 let romajiRegex = new RegExp ("^(?:" + romajiKeys.join ("|") + ")");
-//
-// console.log (romajiRegex);
 //
 module.exports.romajiToKana = function (romajiString)
 {
@@ -404,5 +421,76 @@ module.exports.romajiToKana = function (romajiString)
         }
     }
     return kanaString.join ("");
+}
+//
+let kanaToRomajiTable = { };
+//
+for (let romaji in romajiToKanaTable)
+{
+    let kana = romajiToKanaTable[romaji];
+    if (Array.isArray (kana))
+    {
+        if (!(kana[0] in kanaToRomajiTable))
+        {
+            kanaToRomajiTable[kana[0]] = [ ];
+        }
+        let geminated = romaji.slice (kana[1]);
+        if (!kanaToRomajiTable[kana[0]].includes (geminated))
+        {
+            kanaToRomajiTable[kana[0]].push (geminated);
+        }
+    }
+    else
+    {
+        if (!(kana in kanaToRomajiTable))
+        {
+            kanaToRomajiTable[kana] = romaji;
+        }
+    }
+}
+//
+// Longest strings first
+// let kanaKeys = Object.keys (kanaToRomajiTable).sort ((a, b) => b.length - a.length);
+let kanaKeys = Object.keys (kanaToRomajiTable).sort ().reverse ();
+let kanaRegex = new RegExp ("^(?:" + kanaKeys.join ("|") + ")");
+//
+module.exports.kanaToRomaji = function (kanaString)
+{
+    let romajiString = [ ];
+    while (kanaString.length > 0)
+    {
+        let found = kanaString.match (kanaRegex);
+        if (found)
+        {
+            let kana = found[0];
+            let romaji = kanaToRomajiTable[kana];
+            if (Array.isArray (romaji))
+            {
+                let nextKana = kanaString[kana.length];
+                if ((nextKana in kanaToRomajiTable) && romaji.includes (kanaToRomajiTable[nextKana][0]))
+                {
+                    romajiString.push (kanaToRomajiTable[nextKana][0]);
+                    kanaString = kanaString.slice (kana.length);
+                }
+                else
+                {
+                    romajiString.push (kana);
+                    kanaString = kanaString.slice (kana.length);
+                }
+            }
+            else
+            {
+                romajiString.push (romaji);
+                kanaString = kanaString.slice (kana.length);
+            }
+        }
+        else
+        {
+            let kana = kanaString[0];
+            romajiString.push (kana);
+            kanaString = kanaString.slice (kana.length);
+        }
+    }
+    return romajiString.join ("");
 }
 //
