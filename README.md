@@ -1,4 +1,4 @@
-# Simple Romaji to Kana Converter
+# Simple Romaji-Kana Converters
 
 ## Description
 
