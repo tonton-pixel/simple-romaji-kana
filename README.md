@@ -23,7 +23,14 @@ const samples =
     "hanadji",
     "kamidzutsumi",
     "RAJIUMU",
-    "FI-TO"
+    "FI-TO",
+    "kan'i",
+    "kani",
+    "KAN",
+    "kon'yaku",
+    "konnyaku",
+    "KONYAKKU",
+    "chousenninjin"
 ];
 for (let sample of samples)
 {
