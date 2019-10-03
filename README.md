@@ -2,7 +2,7 @@
 
 ## Description
 
-This Node module performs a simple rōmaji to kana conversion of a given string.
+This Node module performs simple rōmaji-to-kana and kana-to-rōmaji conversions of a given string.
 
 ## Installing
 
@@ -12,7 +12,7 @@ Switch to your *project* directory (`cd`) then run:
 npm install simple-romaji-kana
 ```
 
-## Example
+## Examples
 
 ```javascript
 const { romajiToKana } = require ('simple-romaji-kana');
@@ -35,6 +35,30 @@ const samples =
 for (let sample of samples)
 {
     console.log (`${sample} → ${romajiToKana (sample)}`);
+}
+```
+
+```javascript
+const { kanaToRomaji } = require ('simple-romaji-kana');
+const samples =
+[
+    "たたみ",
+    "ジョウ",
+    "はなぢ",
+    "かみづつみ",
+    "ラジウム",
+    "フィート",
+    "かんい",
+    "かに",
+    "カン",
+    "こんやく",
+    "こんにゃく",
+    "コニャック",
+    "ちょうせんにんじん"
+];
+for (let sample of samples)
+{
+    console.log (`${sample} → ${kanaToRomaji (sample)}`);
 }
 ```
 
