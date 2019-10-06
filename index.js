@@ -471,10 +471,10 @@ module.exports.kanaToRomaji = function (kanaString)
             let romaji = kanaToRomajiTable[kana];
             if (Array.isArray (romaji))
             {
-                let nextKana = kanaString[kana.length];
-                if ((nextKana in kanaToRomajiTable) && romaji.includes (kanaToRomajiTable[nextKana][0]))
+                let nextFound = kanaString.slice (kana.length).match (kanaRegex);
+                if (nextFound && romaji.includes (kanaToRomajiTable[nextFound[0]][0]))
                 {
-                    romajiString.push (kanaToRomajiTable[nextKana][0]);
+                    romajiString.push (kanaToRomajiTable[nextFound[0]][0]);
                     kanaString = kanaString.slice (kana.length);
                 }
                 else
