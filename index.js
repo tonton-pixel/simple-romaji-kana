@@ -187,18 +187,18 @@ const romajiToKanaTable =
     //
     "n": "ん",
     //
-    "kk": [ "っ", -1 ],
-    "gg": [ "っ", -1 ],
-    "ss": [ "っ", -1 ],
-    "zz": [ "っ", -1 ],
-    "jj": [ "っ", -1 ],
-    "tt": [ "っ", -1 ],
-    "cc": [ "っ", -1 ], "tc": [ "っ", -1 ],
-    "dd": [ "っ", -1 ],
-    "hh": [ "っ", -1 ],
-    "ff": [ "っ", -1 ],
-    "bb": [ "っ", -1 ],
-    "pp": [ "っ", -1 ],
+    "kk": [ "っ", 1 ],
+    "gg": [ "っ", 1 ],
+    "ss": [ "っ", 1 ],
+    "zz": [ "っ", 1 ],
+    "jj": [ "っ", 1 ],
+    "tt": [ "っ", 1 ],
+    "cc": [ "っ", 1 ], "tc": [ "っ", 1 ],
+    "dd": [ "っ", 1 ],
+    "hh": [ "っ", 1 ],
+    "ff": [ "っ", 1 ],
+    "bb": [ "っ", 1 ],
+    "pp": [ "っ", 1 ],
     //
     // KATAKANA → カタカナ
     //
@@ -371,18 +371,18 @@ const romajiToKanaTable =
     //
     "N": "ン",
     //
-    "KK": [ "ッ", -1 ],
-    "GG": [ "ッ", -1 ],
-    "SS": [ "ッ", -1 ],
-    "ZZ": [ "ッ", -1 ],
-    "JJ": [ "ッ", -1 ],
-    "TT": [ "ッ", -1 ],
-    "CC": [ "ッ", -1 ], "TC": [ "ッ", -1 ],
-    "DD": [ "ッ", -1 ],
-    "HH": [ "ッ", -1 ],
-    "FF": [ "ッ", -1 ],
-    "BB": [ "ッ", -1 ],
-    "PP": [ "ッ", -1 ],
+    "KK": [ "ッ", 1 ],
+    "GG": [ "ッ", 1 ],
+    "SS": [ "ッ", 1 ],
+    "ZZ": [ "ッ", 1 ],
+    "JJ": [ "ッ", 1 ],
+    "TT": [ "ッ", 1 ],
+    "CC": [ "ッ", 1 ], "TC": [ "ッ", 1 ],
+    "DD": [ "ッ", 1 ],
+    "HH": [ "ッ", 1 ],
+    "FF": [ "ッ", 1 ],
+    "BB": [ "ッ", 1 ],
+    "PP": [ "ッ", 1 ],
     //
     "-": "ー"
 };
@@ -405,7 +405,7 @@ module.exports.romajiToKana = function (romajiString)
             if (Array.isArray (kana))
             {
                 kanaString.push (kana[0]);
-                romajiString = romajiString.slice (romaji.length + kana[1]);
+                romajiString = romajiString.slice (kana[1]);
             }
             else
             {
@@ -469,24 +469,22 @@ module.exports.kanaToRomaji = function (kanaString)
         {
             let kana = found[0];
             let romaji = kanaToRomajiTable[kana];
+            kanaString = kanaString.slice (kana.length);
             if (Array.isArray (romaji))
             {
-                let nextFound = kanaString.slice (kana.length).match (kanaRegex);
+                let nextFound = kanaString.match (kanaRegex);
                 if (nextFound && romaji.includes (kanaToRomajiTable[nextFound[0]][0]))
                 {
                     romajiString.push (kanaToRomajiTable[nextFound[0]][0]);
-                    kanaString = kanaString.slice (kana.length);
                 }
                 else
                 {
                     romajiString.push (kana);
-                    kanaString = kanaString.slice (kana.length);
                 }
             }
             else
             {
                 romajiString.push (romaji);
-                kanaString = kanaString.slice (kana.length);
             }
         }
         else

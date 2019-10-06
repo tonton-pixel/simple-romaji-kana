@@ -30,7 +30,9 @@ const samples =
     "kon'yaku",
     "konnyaku",
     "KONYAKKU",
-    "chousenninjin"
+    "chousenninjin",
+    "MATCHI",
+    "maccha"
 ];
 for (let sample of samples)
 {
@@ -54,7 +56,9 @@ const samples =
     "こんやく",
     "こんにゃく",
     "コニャック",
-    "ちょうせんにんじん"
+    "ちょうせんにんじん",
+    "マッチ",
+    "まっちゃ"
 ];
 for (let sample of samples)
 {
