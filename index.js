@@ -445,6 +445,11 @@ for (let romaji in romajiToKanaTable)
         if (!(kana in kanaToRomajiTable))
         {
             kanaToRomajiTable[kana] = romaji;
+            let decomposedKana = kana.normalize ('NFD');
+            if (decomposedKana !== kana)
+            {
+                kanaToRomajiTable[decomposedKana] = romaji;
+            }
         }
     }
 }
