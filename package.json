@@ -1,6 +1,6 @@
 {
   "name": "simple-romaji-kana",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "description": "Simple Romaji-Kana Converters",
   "main": "index.js",
   "scripts": {},
@@ -13,9 +13,12 @@
   },
   "homepage": "https://github.com/tonton-pixel/simple-romaji-kana",
   "keywords": [
-    "romaji",
+    "converter",
+    "hepburn",
+    "hiragana",
     "kana",
-    "converter"
+    "katakana",
+    "romaji"
   ],
   "author": "Michel MARIANI",
   "license": "MIT"

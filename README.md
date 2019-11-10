@@ -32,7 +32,8 @@ const samples =
     "KONYAKKU",
     "chousenninjin",
     "MATCHI",
-    "maccha"
+    "maccha",
+    "BE-TO-VEN"
 ];
 for (let sample of samples)
 {
@@ -58,7 +59,8 @@ const samples =
     "コニャック",
     "ちょうせんにんじん",
     "マッチ",
-    "まっちゃ"
+    "まっちゃ",
+    "ベートーヴェン"
 ];
 for (let sample of samples)
 {
