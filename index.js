@@ -17,6 +17,9 @@
 // Wāpuro rōmaji - Wikipedia
 // https://en.wikipedia.org/wiki/W%C4%81puro_r%C5%8Dmaji
 //
+// 外来語の表記：文部科学省
+// http://www.mext.go.jp/b_menu/hakusho/nc/k19910628002/k19910628002.html
+//
 const hepburnToKanaTable = 
 {
     // hiragana → ひらがな
@@ -39,7 +42,7 @@ const hepburnToKanaTable =
     "kye": "きぇ",
     "kyo": "きょ",
     //
-    "kwa": "くぁ",
+    "kwa": { "type": "hiragana", "kun-yomi": "くゎ", "gairaigo": "くぁ" },
     "kwi": "くぃ",
     "kwu": "くぅ",
     "kwe": "くぇ",
@@ -57,7 +60,7 @@ const hepburnToKanaTable =
     "gye": "ぎぇ",
     "gyo": "ぎょ",
     //
-    "gwa": "ぐぁ",
+    "gwa": { "type": "hiragana", "kun-yomi": "ぐゎ", "gairaigo": "ぐぁ" },
     "gwi": "ぐぃ",
     "gwu": "ぐぅ",
     "gwe": "ぐぇ",
@@ -277,7 +280,7 @@ const hepburnToKanaTable =
     "KYE": "キェ",
     "KYO": "キョ",
     //
-    "KWA": "クァ",
+    "KWA": { "type": "katakana", "gairaigo": "クァ", "on-yomi": "クヮ" },
     "KWI": "クィ",
     "KWU": "クゥ",
     "KWE": "クェ",
@@ -295,7 +298,7 @@ const hepburnToKanaTable =
     "GYE": "ギェ",
     "GYO": "ギョ",
     //
-    "GWA": "グァ",
+    "GWA": { "type": "katakana", "gairaigo": "グァ", "on-yomi": "グヮ" },
     "GWI": "グィ",
     "GWU": "グゥ",
     "GWE": "グェ",

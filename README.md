@@ -2,7 +2,7 @@
 
 ## Description
 
-This Node module performs simple rōmaji-to-kana and kana-to-rōmaji conversions of a given string.
+This Node module performs simple Hepburn-based rōmaji-to-kana and kana-to-rōmaji conversions of a given string.
 
 ## Installing
 
@@ -11,8 +11,26 @@ Switch to your *project* directory (`cd`) then run:
 ```bash
 npm install simple-romaji-kana
 ```
+## Usage
+
+```javascript
+romajiToKana (romajiString[, options]);
+```
+
+- `romajiString`: string of *rōmaji* letters; small letters are automatically converted to hiragana (ひらがな) characters, and capital letters to katakana (カタカナ) characters.
+
+- `options` (optional): object litteral with two optional keys representing the conversion intents:
+    - `hiragana`: either `'kun-yomi'` (by default) or `'gairaigo'`;
+    - `katakana`: either `'on-yomi'` or `'gairaigo'` (by default).
+
+```javascript
+kanaToRomaji (kanaString);
+```
+- `kanaString`: string of *kana* characters; hiragana (ひらがな) characters are automatically converted to small rōmaji letters, and katakana (カタカナ) characters to capital rōmaji letters.
 
 ## Examples
+
+### romajiToKana
 
 ```javascript
 const { romajiToKana } = require ('simple-romaji-kana');
@@ -22,24 +40,44 @@ const samples =
     "JOU",
     "hanadji",
     "kamidzutsumi",
-    "RAJIUMU",
-    "FI-TO",
     "kan'i",
     "kani",
     "KAN",
     "kon'yaku",
     "konnyaku",
-    "KONYAKKU",
     "chousenninjin",
-    "MATCHI",
     "maccha",
-    "BE-TO-VEN"
+    "hanawokamu"
 ];
+let options =
+{
+    hiragana: 'kun-yomi',
+    katakana: 'on-yomi'
+};
 for (let sample of samples)
+{
+    console.log (`${sample} → ${romajiToKana (sample, options)}`);
+}
+```
+
+```javascript
+const { romajiToKana } = require ('simple-romaji-kana');
+const gairaigoSamples =
+[
+    "RAJIUMU",
+    "FI-TO",
+    "KONYAKKU",
+    "MATCHI",
+    "BE-TO-VEN",
+    "WO-KUMAN"
+];
+for (let sample of gairaigoSamples)
 {
     console.log (`${sample} → ${romajiToKana (sample)}`);
 }
 ```
+
+### kanaToRomaji
 
 ```javascript
 const { kanaToRomaji } = require ('simple-romaji-kana');
@@ -49,20 +87,33 @@ const samples =
     "ジョウ",
     "はなぢ",
     "かみづつみ",
-    "ラジウム",
-    "フィート",
     "かんい",
     "かに",
     "カン",
     "こんやく",
     "こんにゃく",
-    "コニャック",
     "ちょうせんにんじん",
-    "マッチ",
     "まっちゃ",
-    "ベートーヴェン"
+    "はなをかむ"
 ];
 for (let sample of samples)
+{
+    console.log (`${sample} → ${kanaToRomaji (sample)}`);
+}
+```
+
+```javascript
+const { kanaToRomaji } = require ('simple-romaji-kana');
+const gairaigoSamples =
+[
+    "ラジウム",
+    "フィート",
+    "コニャック",
+    "マッチ",
+    "ベートーヴェン",
+    "ウォークマン"
+];
+for (let sample of gairaigoSamples)
 {
     console.log (`${sample} → ${kanaToRomaji (sample)}`);
 }
