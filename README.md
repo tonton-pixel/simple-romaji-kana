@@ -13,6 +13,8 @@ npm install simple-romaji-kana
 ```
 ## Usage
 
+### romajiToKana
+
 ```javascript
 romajiToKana (romajiString[, options]);
 ```
@@ -22,6 +24,8 @@ romajiToKana (romajiString[, options]);
 - `options` (optional): object litteral with two optional keys representing the conversion intents:
     - `hiragana`: either `'kun-yomi'` (by default) or `'gairaigo'`;
     - `katakana`: either `'on-yomi'` or `'gairaigo'` (by default).
+
+### kanaToRomaji
 
 ```javascript
 kanaToRomaji (kanaString);

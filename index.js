@@ -218,9 +218,9 @@ const hepburnToKanaTable =
     "rye": "りぇ",
     "ryo": "りょ",
     //
-    "wa": "わ",
+    "wa": [ "わ", "うぁ" ],
     "wi": { "type": "hiragana", "kun-yomi": "ゐ", "gairaigo": "うぃ" },
-    "wu": "う",
+    "wu": "うぅ",
     "we": { "type": "hiragana", "kun-yomi": "ゑ", "gairaigo": "うぇ" },
     "wo": { "type": "hiragana", "kun-yomi": "を", "gairaigo": "うぉ" },
     //
@@ -457,9 +457,9 @@ const hepburnToKanaTable =
     "RYE": "リェ",
     "RYO": "リョ",
     //
-    "WA": "ワ",
+    "WA": [ "ワ", "ウァ" ],
     "WI": { "type": "katakana", "gairaigo": "ウィ", "on-yomi": "ヰ" },
-    "WU": "ウ",
+    "WU": "ウゥ",
     "WE": { "type": "katakana", "gairaigo": "ウェ", "on-yomi": "ヱ" },
     "WO": { "type": "katakana", "gairaigo": "ウォ", "on-yomi": "ヲ" },
     //
@@ -475,11 +475,11 @@ const hepburnToKanaTable =
     //
     "N": "ン",
     //
-    "VA": "ヴァ",
-    "VI": "ヴィ",
+    "VA": [ "ヴァ", "ヷ" ],
+    "VI": [ "ヴィ", "ヸ" ],
     "VU": "ヴ",
-    "VE": "ヴェ",
-    "VO": "ヴォ",
+    "VE": [ "ヴェ", "ヹ" ],
+    "VO": [ "ヴォ", "ヺ" ],
     //
     "VYA": "ヴャ",
     "VYU": "ヴュ",
