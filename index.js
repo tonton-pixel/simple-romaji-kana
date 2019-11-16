@@ -96,7 +96,9 @@ const hepburnToKanaTable =
     "te": "て",
     "to": "と",
     //
+    "tya": "てゃ",
     "tyu": "てゅ",
+    "tyo": "てょ",
     //
     "cha": "ちゃ",
     "chi": "ち",
@@ -116,7 +118,9 @@ const hepburnToKanaTable =
     "de": "で",
     "do": "ど",
     //
+    "dya": "でゃ",
     "dyu": "でゅ",
+    "dyo": "でょ",
     //
     "dja": "ぢゃ",
     "dji": "ぢ",
@@ -334,7 +338,9 @@ const hepburnToKanaTable =
     "TE": "テ",
     "TO": "ト",
     //
+    "TYA": "テャ",
     "TYU": "テュ",
+    "TYO": "テョ",
     //
     "CHA": "チャ",
     "CHI": "チ",
@@ -354,7 +360,9 @@ const hepburnToKanaTable =
     "DE": "デ",
     "DO": "ド",
     //
+    "DYA": "デャ",
     "DYU": "デュ",
+    "DYO": "デョ",
     //
     "DJA": "ヂャ",
     "DJI": "ヂ",
@@ -367,7 +375,6 @@ const hepburnToKanaTable =
     "DZU": "ヅ",
     "DZE": "ヅェ",
     "DZO": "ヅォ",
-    //
     //
     "NA": "ナ",
     "NI": "ニ",
