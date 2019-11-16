@@ -13,6 +13,10 @@ npm install simple-romaji-kana
 ```
 ## Usage
 
+```javascript
+const { romajiToKana, kanaToRomaji } = require ('simple-romaji-kana');
+```
+
 ### romajiToKana
 
 ```javascript
@@ -25,12 +29,16 @@ romajiToKana (romajiString[, options]);
     - `hiragana`: either `'kun-yomi'` (by default) or `'gairaigo'`;
     - `katakana`: either `'on-yomi'` or `'gairaigo'` (by default).
 
+- **returns**: string of *kana* characters.
+
 ### kanaToRomaji
 
 ```javascript
 kanaToRomaji (kanaString);
 ```
 - `kanaString`: string of *kana* characters; hiragana (ひらがな) characters are automatically converted to small rōmaji letters, and katakana (カタカナ) characters to capital rōmaji letters.
+
+- **returns**: string of *rōmaji* letters.
 
 ## Examples
 
