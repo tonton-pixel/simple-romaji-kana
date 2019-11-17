@@ -1,4 +1,4 @@
-# Simple Romaji-Kana Converters
+# Simple Hepburn-Based Romaji-Kana Converters
 
 ## Description
 
