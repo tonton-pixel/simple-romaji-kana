@@ -655,9 +655,22 @@ module.exports.kanaToRomaji = function (kanaString)
             if (Array.isArray (romaji))
             {
                 let nextFound = kanaString.match (kanaRegex);
-                if (nextFound && romaji.includes (kanaToRomajiTable[nextFound[0]][0]))
+                if (nextFound)
                 {
-                    romajiString.push (kanaToRomajiTable[nextFound[0]][0]);
+                    let nextKana = nextFound[0];
+                    let nextRomaji = kanaToRomajiTable[nextKana];
+                    if (Array.isArray (nextRomaji))
+                    {
+                        romajiString.push (kana);
+                    }
+                    else if (romaji.includes (nextRomaji[0]))
+                    {
+                        romajiString.push (nextRomaji[0]);
+                    }
+                    else
+                    {
+                        romajiString.push (kana);
+                    }
                 }
                 else
                 {
