@@ -135,4 +135,4 @@ for (let sample of gairaigoSamples)
 
 The MIT License (MIT).
 
-Copyright © 2019 Michel MARIANI.
+Copyright © 2019-2020 Michel MARIANI.
