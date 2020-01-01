@@ -228,6 +228,16 @@ const hepburnToKanaTable =
     "we": { "type": "hiragana", "kun-yomi": "ゑ", "gairaigo": "うぇ" },
     "wo": { "type": "hiragana", "kun-yomi": "を", "gairaigo": "うぉ" },
     //
+    "va": "ゔぁ",
+    "vi": "ゔぃ",
+    "vu": "ゔ",
+    "ve": "ゔぇ",
+    "vo": "ゔぉ",
+    //
+    "vya": "ゔゃ",
+    "vyu": "ゔゅ",
+    "vyo": "ゔょ",
+    //
     "n'a": "んあ",
     "n'i": "んい",
     "n'u": "んう",
@@ -239,16 +249,6 @@ const hepburnToKanaTable =
     "n'yo": "んよ",
     //
     "n": "ん",
-    //
-    "va": "ゔぁ",
-    "vi": "ゔぃ",
-    "vu": "ゔ",
-    "ve": "ゔぇ",
-    "vo": "ゔぉ",
-    //
-    "vya": "ゔゃ",
-    "vyu": "ゔゅ",
-    "vyo": "ゔょ",
     //
     "kk": [ 1, "っ" ],
     "gg": [ 1, "っ" ],
@@ -470,6 +470,16 @@ const hepburnToKanaTable =
     "WE": { "type": "katakana", "gairaigo": "ウェ", "on-yomi": "ヱ" },
     "WO": { "type": "katakana", "gairaigo": "ウォ", "on-yomi": "ヲ" },
     //
+    "VA": [ "ヴァ", "ヷ" ],
+    "VI": [ "ヴィ", "ヸ" ],
+    "VU": "ヴ",
+    "VE": [ "ヴェ", "ヹ" ],
+    "VO": [ "ヴォ", "ヺ" ],
+    //
+    "VYA": "ヴャ",
+    "VYU": "ヴュ",
+    "VYO": "ヴョ",
+    //
     "N'A": "ンア",
     "N'I": "ンイ",
     "N'U": "ンウ",
@@ -481,16 +491,6 @@ const hepburnToKanaTable =
     "N'YO": "ンヨ",
     //
     "N": "ン",
-    //
-    "VA": [ "ヴァ", "ヷ" ],
-    "VI": [ "ヴィ", "ヸ" ],
-    "VU": "ヴ",
-    "VE": [ "ヴェ", "ヹ" ],
-    "VO": [ "ヴォ", "ヺ" ],
-    //
-    "VYA": "ヴャ",
-    "VYU": "ヴュ",
-    "VYO": "ヴョ",
     //
     "KK": [ 1, "ッ" ],
     "GG": [ 1, "ッ" ],
@@ -508,6 +508,8 @@ const hepburnToKanaTable =
     //
     "-": "ー"
 };
+//
+module.exports.hepburnToKanaTable = hepburnToKanaTable;
 //
 // Longest strings first
 // let romajiKeys = Object.keys (hepburnToKanaTable).sort ((a, b) => b.length - a.length);
