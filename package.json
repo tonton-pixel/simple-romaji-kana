@@ -1,6 +1,6 @@
 {
   "name": "simple-romaji-kana",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "Simple Hepburn-based romaji-kana converters",
   "main": "index.js",
   "scripts": {},
