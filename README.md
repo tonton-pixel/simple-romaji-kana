@@ -59,7 +59,8 @@ const samples =
     "konnyaku",
     "chousenninjin",
     "maccha",
-    "hanawokamu"
+    "hanawokamu",
+    "kwaidan"
 ];
 let options =
 {
@@ -81,7 +82,7 @@ const gairaigoSamples =
     "KONYAKKU",
     "MATCHI",
     "BE-TO-VEN",
-    "WO-KUMAN"
+    "WONBATTO"
 ];
 for (let sample of gairaigoSamples)
 {
@@ -106,7 +107,8 @@ const samples =
     "こんにゃく",
     "ちょうせんにんじん",
     "まっちゃ",
-    "はなをかむ"
+    "はなをかむ",
+    "くゎいだん"
 ];
 for (let sample of samples)
 {
@@ -123,7 +125,7 @@ const gairaigoSamples =
     "コニャック",
     "マッチ",
     "ベートーヴェン",
-    "ウォークマン"
+    "ウォンバット"
 ];
 for (let sample of gairaigoSamples)
 {
