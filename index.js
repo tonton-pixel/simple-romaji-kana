@@ -17,8 +17,8 @@
 // Wāpuro rōmaji - Wikipedia
 // https://en.wikipedia.org/wiki/W%C4%81puro_r%C5%8Dmaji
 //
-// 外来語の表記：文部科学省
-// http://www.mext.go.jp/b_menu/hakusho/nc/k19910628002/k19910628002.html
+// 外来語の表記 - 文化庁
+// https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/gairai/
 //
 const hepburnToKanaTable = 
 {
